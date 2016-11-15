@@ -1,0 +1,22 @@
+{
+  "name": "igiewear-modules",
+  "version": "0.0.1",
+  "description": "An example module to illustrate the usage of a package.json",
+  "author": "Damian Bala <r4vell@hotmail.com>",
+  "contributors": [
+    {
+      "name": "Damian Bala",
+      "email": "r4vell@hotmail.com"
+    }
+  ],
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0"
+  },
+  "private": true
+}

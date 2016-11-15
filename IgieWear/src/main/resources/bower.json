@@ -1,0 +1,23 @@
+{
+  "name": "igiewear-modules",
+  "description": "Igiewear modules bower",
+  "main": "",
+  "authors": [
+    "[object Object]"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.8",
+    "materialize": "^0.97.8",
+    "jquery": "^3.1.1"
+  }
+}
