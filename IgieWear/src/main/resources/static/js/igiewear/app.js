@@ -1,12 +1,14 @@
-angular.module('hello', [])
-  .controller('home', function($scope) {
+angular.module('igiewear', [])
+  .controller('postController',['$scope', '$http', function($scope, $http) {
 
-  	
-    $(document).ready(function(){
-      $('.parallax').parallax();
-    });
-        
+	  
+    $scope.greeting = {id: 'xxx', content: 'Hello World!'};
+    $scope.count = 0;
+    
+    $scope.postData = function (){
+    	console.log("SENDING...");
+    	$http.post("/", "POST DATA");
+    }
 
-    $scope.greeting = {id: 'xxx', content: 'Hello World!'}
-    $scope.message = "HELLO!!!!"
-})
+    
+}])
