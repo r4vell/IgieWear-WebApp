@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.igiewear.model.User;
+import com.igiewear.model.pojo.User;
 import com.igiewear.service.UserService;
 
 @RestController

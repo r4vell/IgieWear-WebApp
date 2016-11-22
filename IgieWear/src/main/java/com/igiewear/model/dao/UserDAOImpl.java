@@ -2,17 +2,30 @@ package com.igiewear.model.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.igiewear.model.User;
+import com.igiewear.model.pojo.User;
 
 @Repository
+@Transactional
 public class UserDAOImpl implements UserDAO {
+	
+	@Autowired
+	private SessionFactory _sessionFactory;
+	  
+	private Session getSession() {
+	    return _sessionFactory.getCurrentSession();
+	}
 
 	@Override
 	public void createUser(User user) {
-		System.out.print("USER CREATED!!!");
-		
+		getSession().save(user);
+		System.out.println(user);
 	}
 
 	@Override

@@ -2,7 +2,7 @@ package com.igiewear.model.dao;
 
 import java.util.List;
 
-import com.igiewear.model.User;
+import com.igiewear.model.pojo.User;
 
 public interface UserDAO {
 	

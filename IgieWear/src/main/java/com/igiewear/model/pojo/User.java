@@ -1,16 +1,32 @@
-package com.igiewear.model;
+package com.igiewear.model.pojo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
+@Entity
+@Table(name="User")
 public class User {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int userID;
+	
+	@NotNull
 	public String username;
+	
+	@NotNull
 	public String name;
+	
+	@NotNull
 	public String surname;
-	public int deliveryAddress;
+	
 	public String email;
 	public String password;
-	public String date;
+	public String dateCreated;
 	public boolean isActive;
 	public boolean isAdmin;
 	
@@ -38,12 +54,7 @@ public class User {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	public int getDeliveryAddress() {
-		return deliveryAddress;
-	}
-	public void setDeliveryAddress(int deliveryAddress) {
-		this.deliveryAddress = deliveryAddress;
-	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -56,11 +67,11 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getDate() {
-		return date;
+	public String getDateCreated() {
+		return dateCreated;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void getDateCreated(String date) {
+		this.dateCreated = date;
 	}
 	public boolean isActive() {
 		return isActive;
@@ -77,7 +88,9 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "UserID: " + userID + " Username: " + username + " Name: " + name + " Surname: " + surname; 
+		return "UserID: " + userID + " Username: " + username + " Name: " + name + 
+				" Surname: " + surname + " Email: " + email + 
+				" Password: " + password; 
 	}
 
 }

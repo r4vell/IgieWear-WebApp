@@ -7,7 +7,7 @@ angular.module('igiewear', [])
     
     $scope.postData = function (){
     	console.log("SENDING...");
-    	var user = { userID: 1, email: "r4vell", name: "damian", surname:"bala", password:"haker123"}
+    	var user = { userID: 1, username: "r4vell", email: "r4vell@hotmail.com", name: "damian", surname:"bala", password:"haker123"}
     	$http.post("/user/", user);
     }
 
