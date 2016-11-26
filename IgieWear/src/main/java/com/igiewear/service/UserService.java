@@ -1,5 +1,7 @@
 package com.igiewear.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,12 +15,12 @@ public class UserService {
 	public UserDAO userRepository;
 	
 	
-	public String getUsers() {
-		return "USER DATA";
+	public List<User> getUsers() {
+		return userRepository.getAllUsers();
 	}
 	
-	public boolean createUser(User user) {
+	public void createUser(User user) {
 		userRepository.createUser(user);
-		return true;
+		return;
 	}
 }

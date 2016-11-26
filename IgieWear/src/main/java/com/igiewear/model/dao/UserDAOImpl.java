@@ -36,8 +36,9 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public List<User> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		@SuppressWarnings("unchecked")
+		List<User> allUsers =  getSession().createCriteria(User.class).list();
+		return allUsers;
 	}
 
 	@Override
