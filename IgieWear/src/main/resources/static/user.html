@@ -16,36 +16,91 @@
 </head>
 <body class="container blue lighten-5" ng-app="igiewear">
 
-	<div ng-controller="UserController">
-		<form class="col s6">
-			<h5>NEW USER</h5>
-			<div class="input-field col s12">
-				<input placeholder="Name" id="name" type="text" class="validate" ng-model="name">
-      			<label for="name">First Name</label>
-      		</div>
-      		<div class="input-field col s12">
-				<input placeholder="Surname" id="surname" type="text" class="validate" ng-model="surname">
-      			<label for="surname">Surname</label>
-      		</div>
-
-			<div class="input-field col s12">
-				<input placeholder="Username" id="username" type="text" class="validate" ng-model="username">
-      			<label for="username">Username</label>
-      		</div>
-      		<div class="input-field col s12">
-				<input placeholder="Email" id="email" type="text" class="validate" ng-model="email">
-      			<label for="email">Email</label>
-      		</div>
-      		<div class="input-field col s12">
-				<input placeholder="Password" id="password" type="password" class="validate" ng-model="password">
-      			<label for="password">Password</label>
-      		</div>
-      		<div class="input-field col s12">
-				<input placeholder="Repeat Password" id="password_conf" type="password" class="validate" ng-model="password_conf">
-      			<label for="password_conf">Re-type Password</label>
-      		</div>
-		</form>
-		<a class="waves-effect waves-light btn" ng-click="registerUser()">Create user</a>
+	<div ng-controller="UserController as usrCtrl">
+		<div class="row">
+			<form class="col s6">
+				<h5>NEW USER</h5>
+				<div class="input-field col s12">
+					<input placeholder="Name" id="name" type="text" class="validate" ng-model="name">
+		     		<label for="name">First Name</label>
+		     	</div>
+		     	<div class="input-field col s12">
+					<input placeholder="Surname" id="surname" type="text" class="validate" ng-model="surname">
+		     		<label for="surname">Surname</label>
+		     	</div>
+		
+				<div class="input-field col s12">
+					<input placeholder="Username" id="username" type="text" class="validate" ng-model="username">
+		     		<label for="username">Username</label>
+		     	</div>
+		     	<div class="input-field col s12">
+					<input placeholder="Email" id="email" type="text" class="validate" ng-model="email">
+		     		<label for="email">Email</label>
+		     	</div>
+		     		<div class="input-field col s12">
+					<input placeholder="Password" id="password" type="password" class="validate" ng-model="password">
+		     		<label for="password">Password</label>
+		     	</div>
+		     	<div class="input-field col s12">
+					<input placeholder="Repeat Password" id="password_conf" type="password" class="validate" ng-model="password_conf">
+		     		<label for="password_conf">Re-type Password</label>
+		     	</div>
+				<a class="waves-effect waves-light btn" ng-click="registerUser()">Create user</a>
+			</form>
+			<form class="col s6">
+				<h5>UPDATE USER</h5>
+				<div class="input-field col s12">
+					<input placeholder="Name" id="nameUpdate" type="text" class="validate" ng-model="nameUpdate">
+		     		<label for="nameUpdate">First Name</label>
+		     	</div>
+		     	<div class="input-field col s12">
+					<input placeholder="Surname" id="surnameUpdate" type="text" class="validate" ng-model="surnameUpdate">
+		     		<label for="surnameUpdate">Surname</label>
+		     	</div>
+		
+				<div class="input-field col s12">
+					<input placeholder="Username" id="usernameUpdate" type="text" class="validate" ng-model="usernameUpdate">
+		     		<label for="usernameUpdate">Username</label>
+		     	</div>
+		     	<div class="input-field col s12">
+					<input placeholder="Email" id="emailUpdate" type="text" class="validate" ng-model="emailUpdate">
+		     		<label for="emailUpdate">Email</label>
+		     	</div>
+		     		<div class="input-field col s12">
+					<input placeholder="Password" id="passwordUpdate" type="password" class="validate" ng-model="passwordUpdate">
+		     		<label for="passwordUpdate">Password</label>
+		     	</div>
+		     	<div class="input-field col s12">
+					<input placeholder="Repeat Password" id="password_confUpdate" type="password" class="validate" ng-model="password_confUpdate">
+		     		<label for="password_confUpdate">Re-type Password</label>
+		     	</div>
+				<a class="waves-effect waves-light btn" ng-click="updateUser()">Update User</a>
+			</form>
+		</div>
+		<div class="row">
+			<table class="highlight bordered col s12">
+				<thead>
+					<th data-field="id">User ID</th>
+					<th data-field="username">Username</th>
+					<th data-field="name">Name</th>
+					<th data-field="surname">Surname</th>
+					<th data-field="email">Email</th>
+					<th data-field="password">Password</th>
+					<th data-field="roleID">Role ID</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in users" ng-click="onTableClick(user)">
+						<td>{{user.userID}}</td>
+						<td>{{user.username}}</td>
+						<td>{{user.name}}</td>
+						<td>{{user.surname}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.password}}</td>
+						<td>{{user.roleID}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 
 </body>

@@ -1,10 +1,9 @@
 igiemodule.controller('UserController', function($scope, $http, UserService) {
    
     $scope.registerUser = function () {
-    	console.log("SENDING...");
 
         if($scope.password != $scope.password_conf) {
-            Materialize.toast("Passwords do not match", 8000);
+            Materialize.toast("Passwords do not match", 3000);
             return;
         }
     	
@@ -13,13 +12,14 @@ igiemodule.controller('UserController', function($scope, $http, UserService) {
     		surname: $scope.surname,
     		username: $scope.username,
     		password: $scope.password,
-    		email: $scope.email
+    		email: $scope.email,
+    		roleID: 1
     	};
 
     	var promise = UserService.registerUser(userData);
 
         promise.then(function(response) {
-            Materialize.toast("User Created", 8000);
+            Materialize.toast("User Created", 3000);
         },
         function(error) {
             for( var messages in error) {
@@ -28,9 +28,28 @@ igiemodule.controller('UserController', function($scope, $http, UserService) {
                     console.log(item[text].message);
                 }
             }
-            Materialize.toast("User not created: " + error, 8000);
+            Materialize.toast("User not created: " + error, 3000);
         })
     }
+    
 
+    $scope.allUsers = function() { 	
+    	var promise = UserService.getAllUsers();
+    	
+        promise.then(function(response) {
+        	$scope.users = response.data;
+        },
+        function(error) {
+            Materialize.toast("Error in fetching users" + error, 3000);
+        })	
+    }
+    $scope.allUsers();
+    
+    $scope.onTableClick = function(user) {
+		$scope.nameUpdate = user.name;
+		$scope.surnameUpdate = user.surname;
+		$scope.usernameUpdate = user.username;
+		$scope.emailUpdate = user.email;
+    }
     
 })

@@ -55,6 +55,11 @@ public class User {
 	@Column(name = "isAdmin")
 	private boolean isAdmin;
 	
+	@NotNull
+	@Column(name = "roleID", columnDefinition="default 1")
+	private int roleID;
+	
+
 	public int getUserID() {
 		return userID;
 	}
@@ -125,6 +130,14 @@ public class User {
 	
 	public void setAdmin(boolean isAdmin) {
 		this.isAdmin = isAdmin;
+	}
+	
+	public int getRoleID() {
+		return roleID;
+	}
+
+	public void setRoleID(int roleID) {
+		this.roleID = roleID;
 	}
 	
 	@Override
