@@ -32,8 +32,18 @@ igiemodule.controller('UserController', function($scope, $http, UserService) {
         })
     }
     
+    $scope.updateUser = function() {
+    	
+    	
+    }
+    
+    
+    $scope.deleteUser = function() {
+    	
+    }
+    
 
-    $scope.allUsers = function() { 	
+    $scope.getAllUsers = function() { 	
     	var promise = UserService.getAllUsers();
     	
         promise.then(function(response) {
@@ -43,7 +53,7 @@ igiemodule.controller('UserController', function($scope, $http, UserService) {
             Materialize.toast("Error in fetching users" + error, 3000);
         })	
     }
-    $scope.allUsers();
+    $scope.getAllUsers();
     
     $scope.onTableClick = function(user) {
 		$scope.nameUpdate = user.name;
@@ -51,5 +61,8 @@ igiemodule.controller('UserController', function($scope, $http, UserService) {
 		$scope.usernameUpdate = user.username;
 		$scope.emailUpdate = user.email;
     }
+    
+
+    
     
 })

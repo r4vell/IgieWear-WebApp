@@ -10,14 +10,29 @@
 	<script src="css/materialize/js/materialize.min.js"></script>
 	<script src="js/angular.min.js"></script>
 	<script src="js/igiewear/app.js"></script>
-</head>
-<body class="teal lighten-2" ng-app="igiewear">
-
-	<div class="container">
-		<a class="waves-effect waves-light btn">POST</a>
-	</div>
 	
-	 <p>The button has been clicked times.</p>
+	<script src="js/services/userService.js"></script>
+	
+	<script src="js/controllers/userController.js"></script>
+</head>
+<body class="grey lighten-3 container" ng-app="igiewear">
 
+	<nav>
+    	<div class="nav-wrapper">
+      		<a href="#" class="brand-logo right">IGIE WEAR</a>
+      		<ul id="nav-mobile" class="left hide-on-med-and-down">
+      		    <li><a href="#index">Home</a></li>
+        		<li><a href="#user">User</a></li>
+        		<li><a href="#products">Products</a></li>
+			</ul>
+    	</div>
+  	</nav>
+  	
+    <div class="row grey lighten-3" id="userApi" userapi ng-controller="userController"></div>
+    <div class="row grey lighten-3" id="jobApi" jobapi ng-controller="jobTestCtrl"></div>
+    <div class="row grey lighten-3" id="presentationApi" presentationapi ng-controller="presentationTestCtrl"></div>
+    <div class="row grey lighten-3" id="applicationApi" applicationapi ng-controller="applicationTestCtrl"> </div>
+    <div class="row grey lighten-3" id="countryApi" countryapi ng-controller="countryTestCtrl"></div>
+    <div class="row grey lighten-3" id="jobTypeApi" jobTypeapi ng-controller="jobTypeTestCtrl"></div>
 </body>
 </html>
