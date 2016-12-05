@@ -1,6 +1,6 @@
 igiemodule.controller('UserController', function($scope, $http, UserService) {
    
-    $scope.registerUser = function () {
+    this.registerUser = function () {
 
         if($scope.password != $scope.password_conf) {
             Materialize.toast("Passwords do not match", 3000);

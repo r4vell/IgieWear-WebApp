@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="igiewearApp">
 <head>
 	<meta charset="ISO-8859-1">
 	<title>IgieWear</title>
 	
 	<link rel="stylesheet" type="text/css" href="css/styles.css">	
 	<link rel="stylesheet" type="text/css" href="css/materialize/css/materialize.min.css">	
-	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.js"></script>
 	<script src="css/materialize/js/materialize.min.js"></script>
-	<script src="js/angular.min.js"></script>
-	<script src="js/igiewear/app.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
 	
-	<script src="js/services/userService.js"></script>
+	<script src="app/admin-panel/admin-panel.module.js"></script>
+	<script src="app/admin-panel/admin-panel.component.js"></script>
 	
-	<script src="js/controllers/userController.js"></script>
+	<script src="app/app.module.js"></script>
+	<script src="app/app.config.js"></script>
+	
 </head>
-<body class="grey lighten-3 container" ng-app="igiewear">
-
+<body class="grey lighten-3 container" ng-app="igiewearApp">
 	<nav>
     	<div class="nav-wrapper">
       		<a href="#" class="brand-logo right">IGIE WEAR</a>
       		<ul id="nav-mobile" class="left hide-on-med-and-down">
-      		    <li><a href="#index">Home</a></li>
-        		<li><a href="#user">User</a></li>
-        		<li><a href="#products">Products</a></li>
+      		    <li><a href="#!home">Home</a></li>
+      		    <li><a href="#!admin">Admin</a></li>
+        		<li><a href="#!user">User</a></li>
+        		<li><a href="#!products">Products</a></li>
 			</ul>
     	</div>
   	</nav>
-  	
-    <div class="row grey lighten-3" id="userApi" userapi ng-controller="userController"></div>
-    <div class="row grey lighten-3" id="jobApi" jobapi ng-controller="jobTestCtrl"></div>
-    <div class="row grey lighten-3" id="presentationApi" presentationapi ng-controller="presentationTestCtrl"></div>
-    <div class="row grey lighten-3" id="applicationApi" applicationapi ng-controller="applicationTestCtrl"> </div>
-    <div class="row grey lighten-3" id="countryApi" countryapi ng-controller="countryTestCtrl"></div>
-    <div class="row grey lighten-3" id="jobTypeApi" jobTypeapi ng-controller="jobTypeTestCtrl"></div>
+  	<div ng-view></div>
 </body>
 </html>

@@ -1,0 +1,34 @@
+<div class="row">
+   	<div class="input-field">
+   		<input id="search" type="search" required ng-model="query">
+		<label for="search"><i class="material-icons">search</i></label>
+		<i class="material-icons">close</i>
+  	</div>
+	<table class="highlight bordered col s12">
+		<thead>
+			<th data-field="id">User ID</th>
+			<th data-field="username">Username</th>
+			<th data-field="name">Name</th>
+			<th data-field="surname">Surname</th>
+			<th data-field="email">Email</th>
+			<th data-field="password">Password</th>
+			<th data-field="roleID">Role ID</th>
+			<th data-field="action">Action</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="user in $ctrl.users | filter:query" ng-click="onTableClick(user)">
+				<td>{{user.userID}}</td>
+				<td>{{user.username}}</td>
+				<td>{{user.name}}</td>
+				<td>{{user.surname}}</td>
+				<td>{{user.email}}</td>
+				<td>{{user.password}}</td>
+				<td>{{user.roleID}}</td>
+				<td>
+					<a class="waves-effect waves-light btn" ng-click="updateUser(user)">Update User</a>
+					<a class="waves-effect waves-light btn" ng-click="deleteUser(user)">Delete User</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
