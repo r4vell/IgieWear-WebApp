@@ -1,1 +1,1 @@
-var igiemodule = angular.module('igiewearApp', ['ngRoute', 'adminPanel']);
+var igiemodule = angular.module('igiewearApp', ['ui.router', 'adminModule']);

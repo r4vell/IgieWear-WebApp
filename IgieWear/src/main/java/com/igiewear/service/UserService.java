@@ -16,11 +16,22 @@ public class UserService {
 	
 	
 	public List<User> getUsers() {
-		return userRepository.getAllUsers();
+		return userRepository.getUsers();
+	}
+	
+	public User getUser(int userID) {
+		return userRepository.getUser(userID);
 	}
 	
 	public void createUser(User user) {
 		userRepository.createUser(user);
-		return;
+	}
+	
+	public void updateUser(User user) {
+		userRepository.updateUser(user);
+	}
+	
+	public void deleteUser(int userID) {
+		userRepository.deleteUser(userID);
 	}
 }

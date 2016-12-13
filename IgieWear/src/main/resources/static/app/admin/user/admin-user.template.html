@@ -1,0 +1,96 @@
+<div class="row">
+	<form class="col s6">
+		<h5>NEW USER</h5>
+		<div class="divider"></div>
+		<div class="input-field col s12">
+			<input placeholder="Name" id="name" type="text" class="validate" ng-model="$ctrl.name">
+   			<label for="name">First Name</label>
+   		</div>
+   		<div class="input-field col s12">
+			<input placeholder="Surname" id="surname" type="text" class="validate" ng-model="$ctrl.surname">
+   			<label for="surname">Surname</label>
+   		</div>
+		<div class="input-field col s12">
+			<input placeholder="Username" id="username" type="text" class="validate" ng-model="$ctrl.username">
+    		<label for="username">Username</label>
+   	 	</div>
+    	<div class="input-field col s12">
+			<input placeholder="Email" id="email" type="text" class="validate" ng-model="$ctrl.email">
+   		 	<label for="email">Email</label>
+   		</div>
+		<div class="input-field col s12">
+			<input placeholder="Password" id="password" type="password" class="validate" ng-model="$ctrl.password">
+   			<label for="password">Password</label>
+   		</div>
+	   	<div class="input-field col s12">
+			<input placeholder="Repeat Password" id="password_conf" type="password" class="validate" ng-model="$ctrl.passwordConf">
+   			<label for="password_conf">Re-type Password</label>
+   		</div>
+		<a class="waves-effect waves-light btn" ng-click="$ctrl.registerUser()">Create user</a>
+	</form>
+	<form class="col s6">
+		<h5>UPDATE USER</h5>
+		<div class="divider"></div>
+		<div class="input-field col s12">
+			<input placeholder="Name" id="name" type="text" class="validate" ng-model="$ctrl.modName">
+   			<label for="name">First Name</label>
+   		</div>
+   		<div class="input-field col s12">
+			<input placeholder="Surname" id="surname" type="text" class="validate" ng-model="$ctrl.modSurname">
+   			<label for="surname">Surname</label>
+   		</div>
+		<div class="input-field col s12">
+			<input placeholder="Username" id="username" type="text" class="validate" ng-model="$ctrl.modUsername">
+    		<label for="username">Username</label>
+   	 	</div>
+    	<div class="input-field col s12">
+			<input placeholder="Email" id="email" type="text" class="validate" ng-model="$ctrl.modEmail">
+   		 	<label for="email">Email</label>
+   		</div>
+		<div class="input-field col s12">
+			<input placeholder="Password" id="password" type="password" class="validate" ng-model="$ctrl.modPassword">
+   			<label for="password">Password</label>
+   		</div>
+		<a class="waves-effect waves-light btn" ng-click="$ctrl.updateUser()">Update user</a>
+	</form>
+</div>
+<div class="row">
+	<div class="col 6">
+		<a class="waves-effect waves-light btn" ng-click="$ctrl.getUser()">Get user</a>
+	</div>
+</div>
+<div class="row">
+   	<div class="input-field">
+   		<input id="search" type="search" required ng-model="$ctrl.query">
+		<label for="search"><i class="material-icons">search</i></label>
+		<i class="material-icons">close</i>
+  	</div>
+  	<div class="divider"></div>
+	<table class="highlight bordered col s12">
+		<thead>
+			<th data-field="id">User ID</th>
+			<th data-field="username">Username</th>
+			<th data-field="name">Name</th>
+			<th data-field="surname">Surname</th>
+			<th data-field="email">Email</th>
+			<th data-field="password">Password</th>
+			<th data-field="roleID">Role ID</th>
+			<th data-field="action">Action</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="user in $ctrl.users | filter: $ctrl.query">
+				<td>{{user.userID}}</td>
+				<td>{{user.username}}</td>
+				<td>{{user.name}}</td>
+				<td>{{user.surname}}</td>
+				<td>{{user.email}}</td>
+				<td>{{user.password}}</td>
+				<td>{{user.roleID}}</td>
+				<td>
+					<a class="waves-effect waves-light btn" ng-click="$ctrl.onTableClick(user)">Update User</a>
+					<a class="waves-effect waves-light btn" ng-click="$ctrl.deleteUser(user)">Delete User</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

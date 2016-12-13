@@ -3,33 +3,67 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>IgieWear</title>
-	
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">	
 	<link rel="stylesheet" type="text/css" href="css/materialize/css/materialize.min.css">	
 	<script src="js/jquery.js"></script>
 	<script src="css/materialize/js/materialize.min.js"></script>
 	<script src="js/angular.js"></script>
-	<script src="js/angular-route.js"></script>
+	<script src="js/angular-ui-router.js"></script>
+	<script src="js/angular-resource.js"></script>
 	
-	<script src="app/admin-panel/admin-panel.module.js"></script>
-	<script src="app/admin-panel/admin-panel.component.js"></script>
+	<script src="app/services/services.module.js"></script>
+	<script src="app/services/user.service.js"></script>	
+	
+	<script src="app/admin/admin.module.js"></script>
+	<script src="app/admin/user/admin-user.component.js"></script>
+	<script src="app/admin/product/admin-product.component.js"></script>
 	
 	<script src="app/app.module.js"></script>
 	<script src="app/app.config.js"></script>
 	
 </head>
 <body class="grey lighten-3 container" ng-app="igiewearApp">
-	<nav>
-    	<div class="nav-wrapper">
-      		<a href="#" class="brand-logo right">IGIE WEAR</a>
-      		<ul id="nav-mobile" class="left hide-on-med-and-down">
-      		    <li><a href="#!home">Home</a></li>
-      		    <li><a href="#!admin">Admin</a></li>
-        		<li><a href="#!user">User</a></li>
-        		<li><a href="#!products">Products</a></li>
-			</ul>
-    	</div>
-  	</nav>
-  	<div ng-view></div>
+	<div class="row">
+		<nav>
+	    	<div class="nav-wrapper">
+	      		<a href="#" class="brand-logo right">IGIE WEAR</a>
+	      		<ul id="nav-mobile" class="left hide-on-med-and-down">
+	      		    <li><a ui-sref="home">Home</a></li>
+	      		    <li><a ui-sref="admin">Admin</a></li>
+	        		<li><a ui-sref="home">User</a></li>
+	        		<li><a ui-sref="product">Products</a></li>
+				</ul>
+	    	</div>
+	  	</nav>
+	</div>
+  	<div ui-view></div>
+  	
+  	
+	<footer class="page-footer row">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Footer Content</h5>
+					<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Links</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+						<li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+            	© 2014 Copyright Text
+				<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>

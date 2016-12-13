@@ -1,0 +1,26 @@
+<script>
+  $(document).ready(function(){
+    $('ul.tabs').tabs();
+  });
+</script>
+<div class="row">
+	<ul class="tabs">
+		<li class="tab col s3"><a class="active" href="#home">Home</a></li>
+		<li class="tab col s3"><a href="#news">News</a></li>
+		<li class="tab col s3"><a href="#user">User</a></li>
+		<li class="tab col s3"><a href="#product">Product</a></li>
+	</ul>
+	<div id="home" class="col s12">
+		<h1>tralalaal</h1>
+		<div ui-view></div>
+	</div>
+	<div id="news" class="col s12">
+		<div ui-view="news"></div>
+	</div>
+	<div id="user" class="col s12">
+		<div ui-view="user"></div>
+	</div>
+	<div id="product" class="col s12">
+		<div ui-view="product"></div>
+	</div>
+</div>
