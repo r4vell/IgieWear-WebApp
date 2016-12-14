@@ -1,8 +1,9 @@
-igiemodule.config(['$stateProvider', '$urlRouterProvider',
-    function config($stateProvider, $urlRouterProvider) {
+igiemodule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+    function config($stateProvider, $urlRouterProvider, $locationProvider) {
 	
+		//$locationProvider.html5Mode(true);
 		$urlRouterProvider.otherwise('/home');
-		
+
 		$stateProvider
 		.state('home', {
 			url: '/home',
