@@ -1,6 +1,6 @@
 adminModule.component('adminUserPanel', {
 	templateUrl : 'app/admin/user/admin-user.template.html',
-	controller: [ 'User', '$http',
+	controller: [ 'User',
 		function AdminUserPanelController(User, $http) {
 		
 		var self = this;

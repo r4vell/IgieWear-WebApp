@@ -19,31 +19,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.igiewear.model.pojo.Product;
-import com.igiewear.service.ProductService;
+import com.igiewear.model.pojo.ProductCategory;
+import com.igiewear.service.ProductCategoryService;
 import com.igiewear.utils.CustomHttpResponseBody;
 
 @RestController
-@RequestMapping("/product")
-public class ProductController {
-	
+@RequestMapping("/productCategory")
+public class ProductCategoryController {
+
 	@Autowired
-	private ProductService productService;
+	private ProductCategoryService productCategoryService;
 	
 	@GetMapping
-	public List<Product> getProducts() {
-		return productService.getProducts();
+	public List<ProductCategory> getProducts() {
+		return productCategoryService.getProductCategories();
 	}
 	
 	@GetMapping("/{id}")
-	public Product getProduct(@PathVariable(value = "id") int productID) {
-		return productService.getProduct(productID);
+	public ProductCategory getProductCategory(@PathVariable(value = "id") int productCategoryID) {
+		return productCategoryService.getProductCategory(productCategoryID);
 	}
 	
 	@PostMapping
-	public ResponseEntity<ArrayList<CustomHttpResponseBody>> createUser(@RequestBody Product product) {
+	public ResponseEntity<ArrayList<CustomHttpResponseBody>> createUser(@RequestBody ProductCategory productCategory) {
 		try {
-			productService.createProduct(product);
+			productCategoryService.createProductCategory(productCategory);
 		}
 		catch (ConstraintViolationException e)
 		{
@@ -60,16 +60,14 @@ public class ProductController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<?> updateUser(@RequestBody Product product) {
-		productService.updateProduct(product);
+	public ResponseEntity<?> updateUser(@RequestBody ProductCategory productCategory) {
+		productCategoryService.updateProductCategory(productCategory);
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> deleteUser (@PathVariable(value = "id") int productID) {
-		productService.deleteProduct(productID);
+	public ResponseEntity<?> deleteUser (@PathVariable(value = "id") int productCategoryID) {
+		productCategoryService.deleteProductCategory(productCategoryID);
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 	}
-	
-
 }

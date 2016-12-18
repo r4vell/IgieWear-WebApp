@@ -23,14 +23,6 @@ igiemodule.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 	            },
 	        }
 		})
-		.state('product', {
-			url: '/product',
-			templateUrl: '/app/product-list/product-list.template.html'
-		})
-		.state('product.detail', {
-			url: '/product',
-			templateUrl: '/app/product-list/product-list.template.html'
-		})
 	
 	
     }
